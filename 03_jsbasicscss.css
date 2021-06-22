@@ -1,0 +1,20 @@
+body{
+    background-color: #f6e0ff;
+}
+
+h1{
+    color: #705646;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+p{
+    color: #705646;
+    font-size: 2em;
+}
+
+p span{
+    font-size: 2em;
+}
