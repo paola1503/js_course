@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prompt and operators</title>
+<link rel="stylesheet" href="08_promptandoperatorscss.css">
+
+<script>
+  var name=prompt("Please write your name");
+  var surname=prompt("Please write your surname");
+  var age=prompt("Please write your age");
+  var decreasing=prompt("How many years younger would you wish to be?");
+  age-=decreasing;
+</script>
+</head>
+
+<body>
+<div class="container">
+  <div class="header">
+    <p class="logo">JavaScript Course - <i class="italics"> Always learning</p>
+  </div>
+
+  <div class="content">
+    <div class="main">
+      <h1>Your ideal age</h1>
+
+      <script>
+          document.write("<p>");
+          document.write("Welcome " + name + " " + surname + "<br/>" + 
+          "You'd like to be " + age + " years old");
+          document.write("</p>");
+	    </script>
+     </div>
+  </div>
+  
+</div>
+</body>
+</html>
