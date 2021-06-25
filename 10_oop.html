@@ -7,10 +7,26 @@
     
 <body>
     <input type="button" id="button1">
+    <input type="button" id="button2">
+    <input type="text" id="mytext">
 
     <script>
-        var mybutton=document.getElementById("button1");
-        mybutton.style.width="250px";
+        var mybutton1=document.getElementById("button1");
+        var mybutton2=document.getElementById("button2");
+        var mytext=document.getElementById("mytext");
+
+        mybutton1.style.width="300px";
+        mybutton1.style.height="300px";
+        mybutton1.style.backgroundColor="#ccfffd";
+
+        mybutton2.style.width="300px";
+        mybutton2.style.height="300px";
+        mybutton2.style.backgroundColor="#ebccff";
+        mybutton2.focus();
+
+        mytext.style.backgroundColor="#ff9191";
+        mytext.value="Write here...";
+        mytext.style.height="200px";
     </script>
 </body>
 </html>
