@@ -7,13 +7,15 @@
     <script>
         var carPrice=60000;
         var savedMoney=prompt ("Tell us how much money you have saved: ");
+        var lottery=prompt ("Do you have a winning lottery number? ");
+        var age=prompt ("Tell us your age: ");
 
-        if (savedMoney>=carPrice){
-            alert ("You can afford the car!");
+        if ((savedMoney>=carPrice || lottery=="yes") && age>=16){
+            alert ("You can buy the car!");
         }
 
         else{
-            alert ("You can't afford tha car. You need to save more money.");
+            alert ("Sorry, you can't buy the car.");
         }
     </script>
 </head>
