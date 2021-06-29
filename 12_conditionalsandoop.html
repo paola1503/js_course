@@ -40,9 +40,9 @@ table{
 
 <script>
     var body=document.getElementById("body");
-    var webColor=prompt("What color do you prefer: blue, green, or red?");
+    var webColor=prompt("What color do you prefer: blue, green, or red?").toLowerCase();
 
-    if(webColor=="blue"){
+  if(webColor=="blue"){
         body.style.backgroundColor="blue";
     }
 
@@ -57,6 +57,23 @@ table{
     else{
         alert("That is not an allowed color");
     }
+
+  //Another way to do the same thing:
+    /*if(webColor!="blue" && webColor!="green" && webColor!="red"){
+      alert("That is not an allowed color");
+    }
+
+    else if(webColor=="blue"){
+      body.style.backgroundColor="blue";
+    }
+
+    else if(webColor=="green"){
+      body.style.backgroundColor="green";
+    }
+
+    else{
+      body.style.backgroundColor="red";
+    }*/
 </script>
 
 </body>
