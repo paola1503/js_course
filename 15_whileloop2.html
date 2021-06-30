@@ -15,12 +15,20 @@
         
     <script>
         var name, age, country;
-        name=prompt("What's your name?");
-        age=prompt("How old are you?");
-            while(age<=0 || age>125){
-                age=prompt("Please introduce a valid age");
+        name=prompt("What's your name?","Name");
+            while(!isNaN(name)){
+                name=prompt("Names must not include numbers","Name");
             }
-        country=prompt("Which country do you live in?");
+        
+        age=prompt("How old are you?","Age");
+            while(age<=0 || age>125 || isNaN(age)){
+                age=prompt("Please introduce a valid age (0-125)","Age");
+            }
+
+        country=prompt("Which country do you live in?","Country");
+            while(!isNaN(country)){
+                country=prompt("Countries must not include numbers","Country");
+            }
     </script>
 </head>
     
