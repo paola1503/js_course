@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>While Loop 2</title>
+
+    <style>
+        #container{
+            width: 25%;
+            background-color: #ffc;
+            margin: auto;
+            padding: 15px;
+        }
+    </style>
+        
+    <script>
+        var name, age, country;
+        name=prompt("What's your name?");
+        age=prompt("How old are you?");
+            while(age<=0 || age>125){
+                age=prompt("Please introduce a valid age");
+            }
+        country=prompt("Which country do you live in?");
+    </script>
+</head>
+    
+<body>
+    <div id="container">
+        <p>Name: 
+            <script>document.write(name);</script>
+        </p>
+
+        <p>Age: 
+            <script>document.write(age);</script>
+        </p>
+
+        <p>Country: 
+            <script>document.write(country);</script>
+        </p>
+    </div>
+
+</body>
+</html>
