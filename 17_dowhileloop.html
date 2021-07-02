@@ -3,25 +3,30 @@
 <head>
     <meta charset="utf-8">
     <title>Do While Loop</title>
-    
+
     <script>
         var random=Math.round(Math.random()*100);
         var mynumber,attempts;
         mynumber=0;
         attempts=0;
 
+//We use a do while loop instead of a while loop because the random number can be 0. In that case, the random number
+//would be the same as the initial value of mynumber. We would never enter the while loop, and therefore
+//the program would tell us it has taken us 0 attempts to guess the number, instead of 1 attempt.
         do{
-            mynumber=prompt("Try to guess the number that the computer is thinking of! Introduce a number between 0 and 100");
+            mynumber=prompt("Try to guess the number that the computer is thinking of! Introduce a number between 0 and 100:");
             if(random>mynumber){
-                alert("The computer's number is higher than that");
+                alert("The computer's number is higher than that.");
             }
 
             if(random<mynumber){
-                alert("The computer's number is lower than that");
+                alert("The computer's number is lower than that.");
             }
+
+            attempts++;
         }while(random!=mynumber);
 
-        alert("Yes! That was the number");
+        alert("Yes! That was the number. It has taken you " + attempts + " attempts.");
     </script>
 </head>
     
