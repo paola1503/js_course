@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Functions</title>
+    <style>
+        .center{
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function today_is(){
+            var today=new Date();
+            document.write(today.toDateString());
+        }
+    </script>
+</head>
+    
+<body>
+<h1 class="center"><strong>What day is today?</strong></h1>
+
+<p>Today is: <script>today_is();</script></p>
+</body>
+</html>
