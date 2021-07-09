@@ -34,6 +34,10 @@
   <script>
     var digit="";
     var accumulated=0;
+    var add=false;
+    var substract=false;
+    var multiply=false;
+    var divide=false;
 
     function display_numbers(number){
       document.getElementById("display").value=digit+number;
@@ -44,6 +48,54 @@
       accumulated=accumulated+parseInt(digit);
       document.getElementById("display").value=accumulated;
       digit="";
+      add=true;
+    }
+
+    function substraction(){
+      if(add){
+        accumulated=accumulated+parseInt(digit);
+        document.getElementById("display").value=accumulated;
+      }
+
+      else{
+      accumulated=accumulated-parseInt(digit);
+      document.getElementById("display").value=accumulated;
+      }
+      digit="";
+      add=false;
+      substract=true;
+    }
+
+    function multiplication(){
+      accumulated=accumulated*parseInt(digit);
+      document.getElementById("display").value=accumulated;
+      digit="";
+      multiply=true;
+    }
+
+    function division(){
+      accumulated=accumulated/parseInt(digit);
+      document.getElementById("display").value=accumulated;
+      digit="";
+      divide=true;
+    }
+
+    function result(){
+      if(add){
+        document.getElementById("display").value=accumulated+parseInt(digit);
+      }
+
+      else if(substract){
+        document.getElementById("display").value=accumulated-parseInt(digit);
+      }
+
+      else if(multiply){
+        document.getElementById("display").value=accumulated*parseInt(digit);
+      }
+
+      else if(divide){
+        document.getElementById("display").value=accumulated/parseInt(digit)
+      }
     }
 
   </script>
@@ -57,9 +109,9 @@
   </tr>
   <tr>
     <td width="26%"><input name="button" type="button" class="number" id="button" value="+" onclick="addition()"></td>
-    <td width="21%"><input name="button2" type="button" class="number" id="button2" value="-"></td>
-    <td width="21%"><input name="button3" type="button" class="number" id="button3" value="*"></td>
-    <td width="32%"><input name="button4" type="button" class="number" id="button4" value="/"></td>
+    <td width="21%"><input name="button2" type="button" class="number" id="button2" value="-" onclick="substraction()"></td>
+    <td width="21%"><input name="button3" type="button" class="number" id="button3" value="*" onclick="multiplication()"></td>
+    <td width="32%"><input name="button4" type="button" class="number" id="button4" value="/" onclick="division()"></td>
   </tr>
   <tr>
     <td><input name="num7" type="button" class="number" id="num7" value="7" onclick="display_numbers(7)"></td>
@@ -82,7 +134,7 @@
   <tr>
     <td><input name="num0" type="button" class="number" id="num0" value="0" onclick="display_numbers(0)"></td>
     <td><input name="button17" type="button" class="number" id="button17" value=","></td>
-    <td colspan="2"><input name="button12" type="button" class="equals" id="button12" value="="></td>
+    <td colspan="2"><input name="button12" type="button" class="equals" id="button12" value="=" onclick="result()"></td>
   </tr>
 </table>
 
