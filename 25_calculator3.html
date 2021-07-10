@@ -4,143 +4,225 @@
 <meta charset="utf-8">
 <title>Calculator</title>
 
-  <style>
-    .number{
-      width: 60px;
-      height: 60px;
-    }
-
-    .equals{
-      width: 120px;
-      height: 60px;
-    }
-
-    table{
-      margin: auto;
-    }
-
-    .color_display{
-      height: 30px;
-      background-color: #000;
-      border: medium #fff;
-      font: "Space Age";
-      color: #0F0;
-      font-size: 18px;
-      text-align: right;
-      padding: 5px;
-    }
-  </style>
-
-  <script>
+<script>
     var digit="";
     var accumulated=0;
     var add=false;
     var substract=false;
+    var first_substraction=true;
     var multiply=false;
+    var first_multiplication=true;
     var divide=false;
-
+    var first_division=true;
+     
     function display_numbers(number){
-      document.getElementById("display").value=digit+number;
+      document.getElementById("display").value=digit+number; 
       digit=document.getElementById("display").value;
     }
-
+    
+    function restart(){
+      digit=0;
+      accumulated=0;
+      document.getElementById("display").value=0;
+    }
+     
     function addition(){
-      accumulated=accumulated+parseInt(digit);
-      document.getElementById("display").value=accumulated;
+      if(substract){
+       accumulated=accumulated-parseInt(digit);
+       document.getElementById("display").value=accumulated;
+
+      }else if(multiply){
+       accumulated=accumulated*parseInt(digit);
+       document.getElementById("display").value=accumulated;
+       
+      }else if(divide){
+       accumulated=accumulated/parseInt(digit);
+       document.getElementById("display").value=accumulated;
+       
+      }else{
+       accumulated=accumulated+parseInt(digit);
+       document.getElementById("display").value=accumulated;
+       digit="";
+      }
+      
       digit="";
       add=true;
-    }
+      substract=false;
+      first_substraction=false;
+      multiply=false;
+      first_multiplication=false;
+      divide=false;
+      first_division=false;
+     }
+     
+     function substraction(){
+      if(first_substraction==false){
 
-    function substraction(){
-      if(add){
+       if(add){
         accumulated=accumulated+parseInt(digit);
         document.getElementById("display").value=accumulated;
+    
+       }else if(multiply){
+        accumulated=accumulated*parseInt(digit);
+        document.getElementById("display").value=accumulated;
+    
+       }else if(divide){
+       accumulated=accumulated/parseInt(digit);
+       document.getElementById("display").value=accumulated;
+    
+       }else{
+        accumulated=accumulated-parseInt(digit);
+        document.getElementById("display").value=accumulated;
+       }
+      
+      }else{
+       accumulated=parseInt(digit);
+       first_substraction=false;
       }
-
-      else{
-      accumulated=accumulated-parseInt(digit);
-      document.getElementById("display").value=accumulated;
-      }
+      
       digit="";
       add=false;
       substract=true;
-    }
-
-    function multiplication(){
-      accumulated=accumulated*parseInt(digit);
-      document.getElementById("display").value=accumulated;
+      multiply=false;
+      first_multiplication=false;
+      divide=false;
+      first_division=false;
+     }
+     
+     function multiplication(){
+      if(first_multiplication==false){
+       
+       if (add){
+        accumulated=accumulated+parseInt(digit);
+        document.getElementById("display").value=accumulated;
+       
+       }else if(substract){
+        accumulated=accumulated-parseInt(digit);
+        document.getElementById("display").value=accumulated;
+      
+       }else if (divide){
+        accumulated=accumulated/parseInt(digit);
+        document.getElementById("display").value=accumulated;
+         
+       }else{
+        accumulated=accumulated*parseInt(digit);
+        document.getElementById("display").value=accumulated;
+       }
+       
+      }else{
+       accumulated=1; 
+       accumulated=accumulated*parseInt(digit);
+       document.getElementById("display").value=accumulated;
+       first_multiplication=false;
+      }
+      
       digit="";
+      add=false;
+      substract=false;
+      first_substraction=false;
       multiply=true;
-    }
-
-    function division(){
-      accumulated=accumulated/parseInt(digit);
-      document.getElementById("display").value=accumulated;
+      divide=false;
+      first_division=false;
+     }
+     
+     function division(){
+      if(first_division==false){
+       
+       if (add){
+        accumulated=accumulated+parseInt(digit);
+        document.getElementById("display").value=accumulated;
+       
+       }else if(substract){
+        accumulated=accumulated-parseInt(digit);
+        document.getElementById("display").value=accumulated;
+         
+       }else if(multiply){
+        accumulated=accumulated*parseInt(digit);
+        document.getElementById("display").value=accumulated;
+    
+       }else{
+        accumulated=accumulated/parseInt(digit);
+        document.getElementById("display").value=accumulated;
+       }
+       
+      }else{
+       accumulated=parseInt(digit);
+       document.getElementById("display").value=accumulated;
+       first_division=false;
+      }
+      
       digit="";
+      add=false;
+      substract=false;
+      first_substraction=false;
+      multiply=false;
+      first_multiplication=false;
       divide=true;
-    }
-
-    function result(){
+     }
+     
+     function result(){
+      
       if(add){
-        document.getElementById("display").value=accumulated+parseInt(digit);
+       document.getElementById("display").value=accumulated+parseInt(digit);
+       digit=0;
+       
+      }else if(substract){
+       document.getElementById("display").value=accumulated-parseInt(digit);
+       digit=0;
+       
+      }else if(multiply){
+       accumulated=accumulated*parseInt(digit);
+       document.getElementById("display").value=accumulated;
+       digit=1;
+       
+      }else if(divide){
+       accumulated=accumulated/parseInt(digit);
+       document.getElementById("display").value=accumulated;
+       digit=1;
       }
 
-      else if(substract){
-        document.getElementById("display").value=accumulated-parseInt(digit);
+      accumulated=parseInt(document.getElementById("display").value);
       }
-
-      else if(multiply){
-        document.getElementById("display").value=accumulated*parseInt(digit);
-      }
-
-      else if(divide){
-        document.getElementById("display").value=accumulated/parseInt(digit)
-      }
-    }
-
-  </script>
-</head>
-
-<body>
-<table width="15%" border="1">
-  <tr>
-    <td colspan="4" align="center">
-    <input name="display" type="text" class="color_display" id="display" size="25"></td>
-  </tr>
-  <tr>
-    <td width="26%"><input name="button" type="button" class="number" id="button" value="+" onclick="addition()"></td>
-    <td width="21%"><input name="button2" type="button" class="number" id="button2" value="-" onclick="substraction()"></td>
-    <td width="21%"><input name="button3" type="button" class="number" id="button3" value="*" onclick="multiplication()"></td>
-    <td width="32%"><input name="button4" type="button" class="number" id="button4" value="/" onclick="division()"></td>
-  </tr>
-  <tr>
-    <td><input name="num7" type="button" class="number" id="num7" value="7" onclick="display_numbers(7)"></td>
-    <td><input name="num8" type="button" class="number" id="num8" value="8" onclick="display_numbers(8)"></td>
-    <td><input name="num9" type="button" class="number" id="num9" value="9" onclick="display_numbers(9)"></td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td><input name="num4" type="button" class="number" id="num4" value="4" onclick="display_numbers(4)"></td>
-    <td><input name="num5" type="button" class="number" id="num5" value="5" onclick="display_numbers(5)"></td>
-    <td><input name="num6" type="button" class="number" id="num6" value="6" onclick="display_numbers(6)"></td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td><input name="num1" type="button" class="number" id="num1" value="1" onclick="display_numbers(1)"></td>
-    <td><input name="num2" type="button" class="number" id="num2" value="2" onclick="display_numbers(2)"></td>
-    <td><input name="num3" type="button" class="number" id="num3" value="3" onclick="display_numbers(3)"></td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td><input name="num0" type="button" class="number" id="num0" value="0" onclick="display_numbers(0)"></td>
-    <td><input name="button17" type="button" class="number" id="button17" value=","></td>
-    <td colspan="2"><input name="button12" type="button" class="equals" id="button12" value="=" onclick="result()"></td>
-  </tr>
-</table>
-
-<script>
-  document.getElementById("display").value=0;
-</script>
+     
+    </script>
+    </head>
+    
+    <body>
+    <table width="15%" border="1">
+      <tr>
+        <td colspan="4" align="center">
+        <input name="display" type="text" class="color_display" id="display" size="25"></td>
+      </tr>
+      <tr>
+        <td width="26%"><input name="button" type="button" class="number" id="button" value="+" onclick="addition()"></td>
+        <td width="21%"><input name="button2" type="button" class="number" id="button2" value="-" onclick="substraction()"></td>
+        <td width="21%"><input name="button3" type="button" class="number" id="button3" value="*" onClick="multiplication()"></td>
+        <td width="32%"><input name="button4" type="button" class="number" id="button4" value="/" onClick="division()"></td>
+      </tr>
+      <tr>
+        <td><input name="num7" type="button" class="number" id="num7" value="7" onClick="display_numbers(7)"></td>
+        <td><input name="num8" type="button" class="number" id="num8" value="8" onClick="display_numbers(8)"></td>
+        <td><input name="num9" type="button" class="number" id="num9" value="9" onClick="display_numbers(9)"></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input name="num4" type="button" class="number" id="num4" value="4" onClick="display_numbers(4)"></td>
+        <td><input name="num5" type="button" class="number" id="num5" value="5" onClick="display_numbers(5)"></td>
+        <td><input name="num6" type="button" class="number" id="num6" value="6" onClick="display_numbers(6)"></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input name="num1" type="button" class="number" id="num1" value="1" onClick="display_numbers(1)"></td> 
+        <td><input name="num2" type="button" class="number" id="num2" value="2" onClick="display_numbers(2)"></td>
+        <td><input name="num3" type="button" class="number" id="num3" value="3" onClick="display_numbers(3)"></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input name="num0" type="button" class="number" id="num0" value="0" onClick="display_numbers(0)"></td>
+        <td><input name="button17" type="button" class="number" id="button17" value="C" onClick="restart()"></td>
+        <td colspan="2"><input name="button12" type="button" class="equals" id="button12" value="=" onclick="result()"></td>
+      </tr>
+    </table>
 
 </body>
 </html>
