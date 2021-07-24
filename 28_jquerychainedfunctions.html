@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQuery Chained Functions</title>
+
+    <style>
+        #hello{
+            background-color: #000;
+            color: #fff;
+            font-size: 24px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#hello").width(500).height(500).text("Hi :)").hide().fadeIn(10000);
+        });
+    </script>
+
+    <!--Another way to write the chained functions
+        <script>
+            $(document).ready(function(){
+                $("#hello").width(500)
+                .height(500)
+                .text("Hi :)")
+                .hide()
+                .fadeIn(10000);
+            });
+        </script>
+    -->
+
+</head>
+    
+<body>
+    <div id="hello">
+        Hello!
+    </div>
+
+    <!--This is how you'd modify the div without using JQuery
+        <script>
+        var hello=document.getElementById("hello");
+        hello.style.width="500px";
+        hello.style.height="500px";
+        hello.innerHTML="Hi :)"
+    </script>-->
+</body>
+</html>
