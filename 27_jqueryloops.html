@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQuery Loops</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#photos img").hide().fadeIn(10000);
+        });
+    </script>
+</head>
+    
+<body>
+    <div id="photos">
+        <img src="images/winter.jpeg" width="300px">
+        &nbsp;
+        <img src="images/fall.jpeg" width="300px">
+        &nbsp;
+        <img src="images/spring.jpeg" width="300px">
+        &nbsp;
+        <img src="images/summer.png" width="300px">
+    </div>
+
+    <!--This is how you'd turn the images invisible without using JQuery
+    <script>
+        var images=document.querySelectorAll("#photos img");
+        for(var i=0;i<images.length;i++){
+            images[i].style.visibility="hidden";
+        }
+    </script>-->
+
+</body>
+</html>
