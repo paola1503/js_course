@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQuery Functions</title>
+
+    <style>
+        .container{
+            background-color: #0f0;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            alert($("#hello h2").html());
+        });
+
+        /*$(document).ready(function(){
+            $("#hello").html("<p>Welcome to my website</p>");
+        });*/
+
+        /*$(document).ready(function(){
+            $("#hello").append("<p>Welcome to my website</p>");
+        });*/
+
+        /*$(document).ready(function(){
+            $("#hello").prepend("<p>Welcome to my website</p>");
+        });*/
+
+        /*$(document).ready(function(){
+            $("#hello").before("<p>Welcome to my website</p>");
+        });*/
+
+        /*$(document).ready(function(){
+            $("#hello").after("<p>Welcome to my website</p>");
+        });*/
+
+        $(document).ready(function(){
+            $("#hello h2").after("Welcome to my website");
+        });
+
+        function validate(){
+            var username=document.getElementById("username").value;
+            if(username==""){
+                $("#username").after("Please fill this field");
+            }
+        }
+
+    </script>
+        
+</head>
+    
+<body>
+    <div id="hello" class="container">
+        <h2>Hello</h2>
+    </div>
+
+    <form action="" method="GET"> 
+        <input name="" type="text" id="username"><br/>
+        <input name="" type="text" id="name"><br/>
+        <input name="" type="text" id="surname"><br/>
+        <input type="button" value="Send" onclick="validate()">
+    </form>
+</body>
+</html>
