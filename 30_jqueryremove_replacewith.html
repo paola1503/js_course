@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQuery: remove and replaceWith</title>
+
+    <style>
+        #banner{
+            background-color: #ff69dc;
+            width: 450px;
+            height: 300px;
+            position: absolute;
+            left: 400px;
+            top: 50px;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        img{
+            float: left;
+            margin: 15px;
+            width: 300px;
+        }
+
+        #season{
+            float: left;
+            margin: 15px;
+            width: 350px;
+            font-size: 36px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            document.getElementById("close").addEventListener("click",close_banner,false);
+            document.getElementById("image1").addEventListener("click",winter,false);
+        });
+
+        function close_banner(){
+            $("#banner").remove();
+        }
+
+        function winter(){
+            $("#image1").replaceWith("<div id='season'>It's winter</div>");
+        }
+    </script>
+        
+</head>
+    
+<body>
+    <div id="banner">
+        I'm a banner
+        <p id="close">Close</p>
+    </div>
+
+    <div id="photos">
+        <img src="images/winter.jpeg" id="image1">
+        &nbsp;
+        <img src="images/fall.jpeg" id="image2">
+        &nbsp;
+        <img src="images/spring.jpeg" id="image3">
+        &nbsp;
+        <img src="images/summer.png" id="image4">
+    </div>
+</body>
+</html>
