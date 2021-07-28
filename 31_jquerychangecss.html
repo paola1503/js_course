@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Changing CSS Attributes</title>
+<style>
+
+.highlight{
+	background-color:#F00;
+}
+
+a{
+	display:block;
+	margin-bottom:20px;
+	font-size:24px;
+}
+
+table{
+	text-align:center;
+	border:none;
+}
+
+td{
+	border:none;
+}
+
+#linksContainer{
+	position: absolute;
+	left: 31px;
+	top: 65px;
+	width: 400px;
+	height: 649px;
+	z-index: 1;
+	padding-top:100px;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        document.getElementById("mylinksbutton").addEventListener("click",highlightMine,false);
+        document.getElementById("additionallinksbutton").addEventListener("click",highlightAdditional,false);
+    });
+
+    function highlightMine(){
+        $(".additional").removeClass("highlight");
+        $(".mine").addClass("highlight");
+    }
+
+    function highlightAdditional(){
+        $(".mine").removeClass("highlight");
+        $(".additional").addClass("highlight");
+    }
+</script>
+
+</head>
+
+<body>
+
+<div id="linksContainer">
+
+<a href="https://paolapetrinut.com" target="_blank" class="mine">
+Paola Petri NUT
+</a><br>
+
+<a href="https://www.google.com" target="_blank" class="additional">
+Google
+</a><br>
+
+<a href="https://www.youtube.com/channel/UCP0WmOeewFFRDph0WHFdu_w" target="_blank" class="mine">
+My YouTube channel
+</a><br>
+
+<a href="https://instagram.com/paolapetrinut" target="_blank" class="mine">
+My Instagram profile
+</a><br>
+
+<a href="https://www.linkedin.com/in/paolapetriortiz/" target="_blank" class="mine">
+My LinkedIn profile
+</a><br>
+
+<a href="https://github.com/paola1503" target="_blank" class="mine">
+My GitHub
+</a>
+</div>
+
+<table width="100%" border="1">
+<tr>
+<td>My links&nbsp;&nbsp;<input type="button" value="Show my links" id="mylinksbutton"></td>
+<td>Additional links&nbsp;&nbsp;<input type="button" value="Show additional links" id="additionallinksbutton"></td>
+</tr>
+
+</body>
+</html>
