@@ -22,10 +22,10 @@
             width: 300px;
         }
 
-        #season{
+        #image1, #image2, #image3, #image4{
             float: left;
             margin: 15px;
-            width: 350px;
+            width: 300px;
             font-size: 36px;
         }
     </style>
@@ -35,15 +35,33 @@
     <script>
         $(document).ready(function(){
             document.getElementById("close").addEventListener("click",close_banner,false);
-            document.getElementById("image1").addEventListener("click",winter,false);
+
+            var images=document.querySelectorAll("#photos img");
+            for(var i=0;i<images.length;i++){
+                images[i].addEventListener("click",season,false);
+            }
         });
 
         function close_banner(){
             $("#banner").remove();
         }
 
-        function winter(){
-            $("#image1").replaceWith("<div id='season'>It's winter</div>");
+        function season(e){
+            if(e.target==image1){
+                $("#image1").replaceWith("<div id='image1'>It's winter!</div>");
+            }
+
+            if(e.target==image2){
+                $("#image2").replaceWith("<div id='image2'>It's fall!</div>");
+            }
+
+            if(e.target==image3){
+                $("#image3").replaceWith("<div id='image3'>It's spring!</div>");
+            }
+
+            if(e.target==image4){
+                $("#image4").replaceWith("<div id='image4'>It's summer!</div>");
+            }
         }
     </script>
         
@@ -57,11 +75,8 @@
 
     <div id="photos">
         <img src="images/winter.jpeg" id="image1">
-        &nbsp;
         <img src="images/fall.jpeg" id="image2">
-        &nbsp;
         <img src="images/spring.jpeg" id="image3">
-        &nbsp;
         <img src="images/summer.png" id="image4">
     </div>
 </body>
