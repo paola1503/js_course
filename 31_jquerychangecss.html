@@ -6,7 +6,9 @@
 <style>
 
 .highlight{
-	background-color:#F00;
+	color: #f00;
+	font-weight: bold;
+	margin-left: 25px;
 }
 
 a{
@@ -39,21 +41,22 @@ td{
 
 <script>
     $(document).ready(function(){
-        document.getElementById("mylinksbutton").addEventListener("click",highlightMine,false);
-        document.getElementById("additionallinksbutton").addEventListener("click",highlightAdditional,false);
+        document.getElementById("mylinksbox").addEventListener("click",highlightMine,false);
+        document.getElementById("additionallinksbox").addEventListener("click",highlightAdditional,false);
     });
 
     function highlightMine(){
+		/*$(".mine").toggleClass("highlight");*/
         $(".additional").removeClass("highlight");
         $(".mine").addClass("highlight");
     }
 
     function highlightAdditional(){
+		/*$(".additional").toggleClass("highlight");*/
         $(".mine").removeClass("highlight");
         $(".additional").addClass("highlight");
     }
 </script>
-
 </head>
 
 <body>
@@ -76,8 +79,8 @@ My YouTube channel
 My Instagram profile
 </a><br>
 
-<a href="https://www.linkedin.com/in/paolapetriortiz/" target="_blank" class="mine">
-My LinkedIn profile
+<a href="https://www.researchgate.net/" target="_blank" class="additional">
+ResearchGate
 </a><br>
 
 <a href="https://github.com/paola1503" target="_blank" class="mine">
@@ -87,8 +90,11 @@ My GitHub
 
 <table width="100%" border="1">
 <tr>
-<td>My links&nbsp;&nbsp;<input type="button" value="Show my links" id="mylinksbutton"></td>
-<td>Additional links&nbsp;&nbsp;<input type="button" value="Show additional links" id="additionallinksbutton"></td>
+<!--<td>My links&nbsp;&nbsp;<input type="checkbox" id="mylinksbox"></td>-->
+<td>My links&nbsp;&nbsp;<input type="radio" name="select" id="mylinksbox"></td>
+
+<!--<td>Additional links&nbsp;&nbsp;<input type="checkbox" id="additionallinksbox"></td>-->
+Additional links&nbsp;&nbsp;<input type="radio"name="select" id="additionallinksbox">
 </tr>
 
 </body>
