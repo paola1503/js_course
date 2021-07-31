@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JQuery - Each</title>
+<style>
+
+img{
+    width: 300px;
+}	
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        document.getElementById("mybutton").addEventListener("click",change,false);
+    });
+
+    function change(){
+        $("img").each(function(){
+            $(this).fadeOut(1000).fadeIn(1000).width("320");
+        });
+    }
+</script>
+</head>
+
+<body>
+<div id="container">
+<img src="images/winter.jpeg">
+<img src="images/fall.jpeg">
+<img src="images/spring.jpeg">
+<img src="images/summer.png">
+</div>
+
+<div id="button">
+<input type="button" id="mybutton" value="Action!">
+</div>
+
+</body>
+</html>
