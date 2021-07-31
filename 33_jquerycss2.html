@@ -26,13 +26,45 @@ table{
 
 <script>
     $(document).ready(function(){
-        document.getElementById("increase1").addEventListener("click",increase,false);
+        var sizeButtons=document.querySelectorAll("input");
+        for(var i=0;i<sizeButtons.length;i++){
+            sizeButtons[i].addEventListener("click",increase,false);
+            sizeButtons[i].addEventListener("click",decrease,false);
+        }
     });
 
-    function increase(){
-        var defaultSize=$("#news1").css("font-size");
+    function increase(e){
+        var area;
+        if(e.target==increase1){
+            area="#news1";
+        }
+        else if(e.target==increase2){
+            area="#news2";
+        }
+        else if(e.target==increase3){
+            area="#news3";
+        }
+
+        var defaultSize=$(area).css("font-size");
         defaultSize=parseFloat(defaultSize);
-        $("#news1").css("font-size",defaultSize*1.05);
+        $(area).css("font-size",defaultSize*1.05);
+    }
+
+    function decrease(e){
+        var area;
+        if(e.target==decrease1){
+            area="#news1";
+        }
+        else if(e.target==decrease2){
+            area="#news2";
+        }
+        else if(e.target==decrease3){
+            area="#news3";
+        }
+
+        var defaultSize=$(area).css("font-size");
+        defaultSize=parseFloat(defaultSize);
+        $(area).css("font-size",defaultSize*0.95);
     }
 </script>
 </head>
@@ -40,10 +72,25 @@ table{
 <body>
 
 <h1>BREAKING NEWS!</h1>
-<div id="news1">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"<table><tr><td style="text-align:left"><input type="button" value="+" id="increase1"></td><td style="text-align:right"><input type="button" value="-" id="decrease1"></td></tr></table></div>
+<div id="news1">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    <table>
+        <tr><td style="text-align:left"><input type="button" value="+" id="increase1"></td>
+        <td style="text-align:right"><input type="button" value="-" id="decrease1"></td>
+    </table>
+</div>
 
-<div id="news2">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"<table><tr><td style="text-align:left"><input type="button" value="+" id="increase2"></td><td style="text-align:right"><input type="button" value="-" id="decrease2"></td></tr></table></div>
+<div id="news2">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    <table>
+        <tr><td style="text-align:left"><input type="button" value="+" id="increase2"></td>
+        <td style="text-align:right"><input type="button" value="-" id="decrease2"></td>
+    </table>
+</div>
 
-<div id="news3">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"<table><tr><td style="text-align:left"><input type="button" value="+" id="increase3"></td><td style="text-align:right"><input type="button" value="-" id="decrease3"></td></tr></table></div>
+<div id="news3">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    <table>
+        <tr><td style="text-align:left"><input type="button" value="+" id="increase3"></td>
+        <td style="text-align:right"><input type="button" value="-" id="decrease3"></td>
+    </table>
+</div>
 </body>
 </html>
