@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JQuery - HTML</title>
+
+<style>
+#container1{
+	position: absolute;
+	left: 67px;
+	top: 177px;
+	width: 408px;
+	height: 298px;
+	z-index: 1;
+}
+
+#container2{
+	position: absolute;
+	left: 510px;
+	top: 176px;
+	width: 443px;
+	height: 297px;
+	z-index: 2;
+}
+
+ul{
+	list-style:none;	
+}
+
+li{
+	margin:10px 0;
+	font-size:24px;
+	width:95px;
+}
+
+.highlight{
+	background-color:#ff59e3;
+	color:#FFF;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        var elements=document.querySelectorAll("li");
+        for(var i=0;i<elements.length;i++){
+            elements[i].addEventListener("mouseover",show_image,false);
+            elements[i].addEventListener("mouseout",remove_image,false);
+        }
+    });
+
+    function show_image(e){
+        if(e.target==elem1){
+            $("#elem1").addClass("highlight");
+            $("img").attr("src","images/winter.jpeg").css("width","300px");
+        }
+
+        else if(e.target==elem2){
+            $("#elem2").addClass("highlight");
+            $("img").attr("src","images/fall.jpeg").css("width","300px");
+        }
+
+        else if(e.target==elem3){
+            $("#elem3").addClass("highlight");
+            $("img").attr("src","images/spring.jpeg").css("width","300px");
+        }
+
+        else if(e.target==elem4){
+            $("#elem4").addClass("highlight");
+            $("img").attr("src","images/summer.png").css("width","300px");
+        }
+    }
+
+    function remove_image(e){
+        if(e.target==elem1){
+            $("#elem1").removeClass("highlight");
+        }
+
+        else if(e.target==elem2){
+            $("#elem2").removeClass("highlight");
+        }
+
+        else if(e.target==elem3){
+            $("#elem3").removeClass("highlight");
+        }
+
+        else if(e.target==elem4){
+            $("#elem4").removeClass("highlight");
+        }
+        $("img").removeAttr("src");
+    }
+    
+</script>
+
+</head>
+
+<body>
+<div id="container1">
+
+<ul>
+
+<li id="elem1">Image 1</li>
+<li id="elem2">Image 2</li>
+<li id="elem3">Image 3</li>
+<li id="elem4">Image 4</li>
+
+</ul>
+</div>
+<div id="container2">
+<img src="">
+</div>
+
+</body>
+</html>
