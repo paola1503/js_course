@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery - Events</title>
+
+<style>
+h1{
+	text-align:center;
+}
+
+body{
+	background-color:#334873;
+	color:#FFF;
+}
+
+#main{
+	width:60%;
+	margin:auto;
+}
+
+a{
+	color:#FFF;
+	font:bold 20px Verdana, Geneva, sans-serif;
+} 
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("html").dblclick(function(){
+            alert("Hiiiii");
+        });
+
+        $("a").mouseover(function(){
+            var message="<p> This is a link  </p>";
+            $("#main").append(message);
+        });
+
+        $("#the_button").click(function(){
+            $(this).val("You've clicked!");
+        });
+        
+        $("#the_field").focus(function(){
+            $(this).val("Write something here");
+        });
+    });
+</script>
+</head>
+<body>
+
+<div id="main">
+
+<h1>Introduction to events</h1>
+
+<p><a href="#">A link</a></p>
+
+<form action="#" method="get">
+<fieldset><legend>Form</legend>
+    <p><input name="textfield" type="text" id="the_field"></p>
+    <p><input name="button" type="button" id="the_button" value="A button"></p></fieldset>
+</form>
+
+</div>
+
+</body>
+</html>
