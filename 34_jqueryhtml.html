@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQuery - HTML</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+    <script>
+        $(document).ready(function(){
+            document.getElementById("img1").addEventListener("mouseover",change,false);
+            document.getElementById("img1").addEventListener("mouseout",restore,false);
+        });
+
+        function change(){
+            $("img").attr("src","images/summer.png");
+        }
+
+        function restore(){
+            $("img").attr("src","images/winter.jpeg");
+        }
+    </script>
+</head>
+    
+<body>
+    <img src="images/winter.jpeg" id="img1" width="300px">
+</body>
+</html>
