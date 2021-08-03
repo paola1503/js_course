@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JQuery - Events</title>
+<style>
+
+#images{
+	width:1475px;
+	margin:auto;
+}
+
+img{
+	padding:20px 30px;
+    width: 300px;
+}
+
+#message_img1{
+	position: absolute;
+	left: 623px;
+	top: 392px;
+	width: 581px;
+	height: 215px;
+	background-color: #f1bff2;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 25px;
+	border: dotted 2px #7b27d6;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#message_img1").hide();
+        $("#image1").hover(function(){
+            $("#message_img1").show();},
+            function(){
+                $("#message_img1").hide();});
+    });
+</script>
+</head>
+
+<body>
+
+<div id="message_img1">Enjoy the summer</div>
+
+<div id="images">
+<img src="images/summer.png" id="image1">
+</div>
+</body>
+</html>
