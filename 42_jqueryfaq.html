@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery - FAQ</title>
+
+<style>
+body{
+	background-color:#6f2994;
+	color:#FFF;
+}
+
+h3{
+	background: url(images/plus.png) no-repeat;
+    background-size: 20px;
+    padding-left: 30px;
+	cursor: pointer;
+}
+
+h3.close{
+	background-image: url(images/minus.png);
+}
+
+.answer{
+	margin-left: 25px;	
+}
+
+.title{
+	text-align:center;
+}
+
+.main{
+	margin-left:200px;	
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".answer").hide();
+        $("h3").click(function(){
+        $(this).next(".answer").fadeToggle();
+        $(this).toggleClass("close");
+        });
+    });
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<p><img src="images/banner.png" width="300px"></p>
+    <h1 class="titulo">Paola's FAQ</h1>
+</div>
+
+	<div class="main">
+<h2>Frequently Asked Questions</h2>
+
+<h3>When is your birthday?</h3>
+        <div class="answer">
+        <p>March 15th</p>
+        </div>
+      
+<h3>Where were you born?</h3>
+        <div class="answer">
+        <p>Madrid, Spain</p>
+        </div>
+      
+<h3>What is your favorite color?</h3>
+        <div class="answer">
+        <p>Purple</p>
+        </div>
+
+ <h3>What is your favorite animal?</h3>
+        <div class="answer">
+        <p>Penguin</p>
+        </div>
+
+ <h3>Are you religious?</h3>
+        <div class="answer">
+        <p>Yes, I'm Catholic</p>
+        </div>
+
+ <h3>Who is the person you love most in the world?</h3>
+        <div class="answer">
+        <p>My husband</p>
+        </div>
+
+ <h3>Pineapple on pizza?</h3>
+        <div class="answer">
+        <p>Absolutely YES</p>
+        </div>
+
+</body>
+</html>
