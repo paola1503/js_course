@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JQuery - Animations</title>
+<style>
+
+#title{
+	margin-left:150px;
+}
+
+#photo p{
+	background-color:#000;
+	color:#FFF;
+	font-size:24px;
+	text-align:center;
+	font-weight:bold;
+	width:300px;
+}
+
+h1{
+	text-align:center;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+	$("#title").hide();
+    $("#photo img").width(60).height(40).click(function(){
+        $(this).animate({
+            marginLeft:"150px",
+            width:"600px",
+            height:"400px"
+        },1500,function(){
+            $("#title").fadeIn(1000).delay(1000).fadeOut(1000);
+        }).delay(3000); //end of animate
+        $(this).animate({
+            marginLeft:"0px",
+            width:"60px",
+            height:"40px"
+        },1500);
+    }); //end of click
+});
+</script>
+</head>
+
+<body>
+<h1>
+
+Let's add animations!
+
+</h1>
+
+<div id="photo">
+
+	<img src="images/banner.png" width="600" height="400" id="image1">
+
+	<p id="title">Banner</p>
+
+</div>
+
+</body>
+</html>
