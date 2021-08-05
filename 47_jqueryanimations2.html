@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JQuery - Animations</title>
+<style>
+
+img{
+	opacity:0.5;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#image").mouseover(function(){
+        $(this).animate(
+            {
+                opacity:"1"
+            },250
+        );
+    });
+
+    $("#image").mouseout(function(){
+        $(this).animate(
+            {
+                opacity:"0.5"
+            },250
+        );
+    });
+});
+
+
+</script>
+</head>
+
+<body>
+<img src="images/banner.png" width="300" height="200" id="image">
+
+</body>
+</html>
