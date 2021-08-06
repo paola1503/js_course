@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JQuery - Preloader</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+	$(document).ready(function() {
+        var new_picture=new Image();
+        new_picture.src="images/angry.webp";
+
+		$("#picture").hover(function(){
+			
+			$(this).attr("src","images/angry.webp");
+			
+		},
+		function(){
+			
+			$(this).attr("src","images/smiley.jpg");
+			
+		});	
+		
+    });
+
+
+</script>
+</head>
+
+<body>
+
+<img src="images/smiley.jpg" width="300" id="picture">
+</body>
+</html>
