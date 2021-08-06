@@ -1,0 +1,70 @@
+/* reset */
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/*end of reset*/
+
+html , body{
+	line-height: 1;
+	background-color: #ffe0f8;
+}
+
+.content{
+	max-width: 760px;
+	margin: 120px 0 0 150px;
+}
+
+.logo{
+	letter-spacing: -1px;
+	color: #674687;
+	text-shadow: 2px 2px 1px #ce8adb;
+	font: normal 54px Arial, sans-serif;
+}
+
+.header{
+	position: relative;
+	border-top: solid 6px white;
+	padding: 10px 0 10px 0;
+	margin-bottom: 20px;
+}
+
+.header img{
+	float:left;
+	margin:20px 20px;
+}
+
+.main{
+	padding-bottom: 1em;
+	border-bottom: solid 1px rgba(255,255,255,.5);
+}
+
+.main h1{
+	font-size: 32px;
+	color: #674687;
+	text-shadow: 1px 1px 1px #ce8adb;
+	border-bottom: solid 1px rgba(255,255,255,.5);
+	margin-bottom: 0.75em;
+}
+
+a{
+	color: rgba(255,255,255,.75);
+}
+
+#gallery img{
+	display: inline-block;
+	margin: 0 0 10px 0;
+	border: 1px solid rgb(0,0,0);
+}
