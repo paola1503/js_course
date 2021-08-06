@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery - FancyBox</title>
+<link rel="stylesheet" href="54_jqueryfancyboxcss.css">
+<link rel="stylesheet" href="jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css">
+
+<script src="jquery.fancybox-1.3.4/jquery-1.4.3.min.js"></script>
+<script src="jquery.fancybox-1.3.4/fancybox/jquery.easing-1.3.pack.js"></script>
+<script src="jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js"></script>
+
+<script>
+$(document).ready(function() {
+    $("#gallery a").fancybox({
+        overlayColor:"#877894",
+        overlayOpacity:.6,
+        transitionIn:"elastic",
+        transitionOut:"elastic",
+        easingIn:"easeInSine",
+        titlePosition:"Outside",
+        cyclic:true,
+        speedIn:500,
+    });
+});
+</script>
+</head>
+<body>
+
+<div class="header">
+<img src="images/banner.png" width="300px">
+	<p class="logo">JQuery - FancyBox</p>
+</div>
+
+
+<div class="content">
+	<div class="main">
+		<h1>Pictures</h1>
+		<div id="gallery">
+		<a href="images/winter.jpeg" rel="gallery" title="Winter"><img src="images/winter.jpeg" width="70" alt="Winter"></a>
+		<a href="images/fall.jpeg" rel="gallery" title="Fall"><img src="images/fall.jpeg" width="70" alt="Fall"></a>
+		<a href="images/spring.jpeg" rel="gallery" title="Spring"><img src="images/spring.jpeg" width="70" alt="Spring"></a>
+		<a href="images/summer.png" rel="gallery" title="Summer"><img src="images/summer.png" width="70" alt="Summer"></a>
+	    </div>
+	</div>
+</div>
+
+</body>
+</html>
