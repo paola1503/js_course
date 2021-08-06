@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JQuery - Preloader</title>
+<style>
+
+table{
+	text-align:center;
+	width:50%;
+	border:none;
+	margin:auto;
+}
+
+img{
+	padding:0 5px;
+}
+
+h1{
+	text-align:center;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+
+	$(document).ready(function() {
+        var picture_hover=["images/winter.jpeg",
+                            "images/fall.jpeg",
+                            "images/spring.jpeg",
+                            "images/summer.png"];
+
+        var images=[];
+
+        for(var i=0;i<picture_hover.length;i++){
+            images[i]=new Image();
+            images[i].src=picture_hover[i];
+        }
+				
+		$("img").each(function() {
+			
+			$(this).hover(change , restore);
+            
+        });
+        	
+	function change(e){
+        if(e.target==img1){
+            $("#img1").attr("src",images[0].src).css("width","300px");
+        }
+
+        else if(e.target==img2){
+            $("#img2").attr("src",images[1].src).css("width","300px");
+        }
+
+        else if(e.target==img3){
+            $("#img3").attr("src",images[2].src).css("width","300px");
+        }
+
+        else if(e.target==img4){
+            $("#img4").attr("src",images[3].src).css("width","300px");
+        }
+	}
+	
+	function restore(e){
+        if(e.target==img1){
+            $("#img1").attr("src","images/1.jpg");
+        }
+
+        else if(e.target==img2){
+            $("#img2").attr("src","images/2.jpg");
+        }
+
+        else if(e.target==img3){
+            $("#img3").attr("src","images/3.jpg");
+        }
+
+        else if(e.target==img4){
+            $("#img4").attr("src","images/4.jpg");
+        }
+	}
+  });
+</script>
+</head>
+
+<body>
+<h1>Surprise image gallery</h1>
+<table width="100%" border="0">
+  <tr>
+    <td><img src="images/1.jpg" id="img1"></td>
+    <td><img src="images/2.jpg" id="img2"></td>
+    <td><img src="images/3.jpg" id="img3"></td>
+    <td><img src="images/4.jpg" id="img4"></td>
+  </tr>
+</table>
+</body>
+</html>
