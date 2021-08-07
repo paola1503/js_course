@@ -5,8 +5,15 @@
 <title>Pop Up</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-    var popupProp="width=300, height=200, left=300, top=300, scrollbars=no, toolbars=no"
-    open("https://paolapetrinut.com","Paola Petri NUT",popupProp);
+    $(document).ready(function(e){
+        var popupProp="width=300, height=200, left=300, top=300, scrollbars=no, toolbars=no";
+        var myPopup=open("https://paolapetrinut.com","Paola Petri NUT",popupProp);
+
+        $("#closeButton").click(function(e){
+            e.preventDefault();
+            myPopup.close();
+        });
+    });
 </script>
 </head>
 
