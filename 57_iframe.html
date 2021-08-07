@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Iframe</title>
+<style>
+body{
+	background-color: #ff8afb;
+}
+
+h1{
+	text-align:center;
+	color:#FFF;
+	font-weight:bold;
+}
+
+#container{
+	background-color:#ff8afb;
+	width:500px;
+	height:400px;
+	margin:auto;
+	
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(e){
+        $("#click").click(function(e){
+            e.preventDefault();
+            $("#website").attr("src","https://paolapetrinut.com");
+        });
+    });
+</script>
+</head>
+
+<body>
+<h1>Paola Petri NUT</h1>
+<a href="" id="click">Click here</a>
+<div id="container"><iframe src="" width="500" height="400" id="website" frameborder="0"></iframe></div>
+
+</body>
+</html>
