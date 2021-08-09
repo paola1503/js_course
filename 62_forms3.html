@@ -23,6 +23,10 @@ td{
 h1{
 	text-align:center;
 }
+
+#card, #expiry_date, #email{
+    background-color: #F93;
+}
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -30,15 +34,15 @@ h1{
 <script>
 	$(document).ready(function() {
 		$("#paypal").click(function(){
-            $("#email").attr("disabled",false).focus();
-            $("#card").attr("disabled",true);
-            $("#expiry_date").attr("disabled",true);
+            $("#email").attr("disabled",false).focus().css("background-color","#FFF");
+            $("#card").attr("disabled",true).css("background-color","#F93");
+            $("#expiry_date").attr("disabled",true).css("background-color","#F93");
         });
 
         $("#visa, #master").click(function(){
-            $("#card").attr("disabled",false).focus();
-            $("#expiry_date").attr("disabled",false);
-            $("#email").attr("disabled",true);
+            $("#card").attr("disabled",false).focus().css("background-color","#FFF");
+            $("#expiry_date").attr("disabled",false).css("background-color","#FFF");
+            $("#email").attr("disabled",true).css("background-color","#F93");
         });
 	});
 </script>
@@ -89,7 +93,7 @@ h1{
       <td>Payment information:</td>
       <td><table width="200">
         <tr>
-          <td><label for="card" id="card_number">Card number:</label></td>
+          <td><label for="card_number" id="card_number">Card number:</label></td>
           <td>
             <input type="text" name="card" id="card" disabled></td>
         </tr>
@@ -99,7 +103,7 @@ h1{
             <input type="text" name="expiry_date" id="expiry_date" disabled></td>
         </tr>
         <tr>
-        <td><label for="email" id="e_mail">Email</label></td>
+        <td><label for="e_mail" id="e_mail">Email</label></td>
         <td>
           <input type="text" name="email" id="email" disabled></td>
         </tr>
