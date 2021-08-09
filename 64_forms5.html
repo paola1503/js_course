@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Forms</title>
+<style>
+
+body{
+	background-color:#FFC;
+}
+
+#main{
+	padding:10px 10px 10px 50px;
+	background-color:#F93;	
+	box-shadow: 10px 10px 5px 0px #999999;
+	border-radius: 10px;
+}
+
+td{
+	padding-bottom:25px;
+}
+
+h1{
+	text-align:center;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+<script>
+
+	$(document).ready(function() {	
+		$("#data_form").validate();
+	});
+</script>
+</head>
+
+<body>
+<h1>Validating forms</h1>
+<div id="container">
+<form id="data_form">
+  <table width="25%" border="0" align="center" id="main">
+    <tr>
+      <td>Name:</td>
+      <td><label for="name"></label>
+        <input type="text" name="name" id="name" class="required" title="Please write your name"></td>
+    </tr>
+    <tr>
+      <td>Surname:</td>
+      <td><input type="text" name="surname" id="surname"class="required" title="Please write your surname"></td>
+    </tr>
+    <tr>
+      <td>Date of birth:</td>
+      <td><label for="date_birth"></label>
+        <input type="date" name="d_birth" id="d_birth"></td>
+    </tr>
+    <tr>
+      <td>Age:</td>
+      <td><input name="number" type="age" id="age" size="4" ></td>
+    </tr>
+    <tr>
+      <td>Postcode:</td>
+      <td><label for="postcode"></label>
+        <input type="text" name="postcode" id="postcode"></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><label for="email"></label>
+        <input type="email" name="email" id="email"></td>
+    </tr>
+    <tr>
+      <td>Website:</td>
+      <td><label for="web_site"></label>
+        <input type="url" name="website" id="website"></td>
+    </tr>
+     <tr>
+      <td><p>Country:</p></td>
+      <td><p>
+        <label for="country"></label>
+        <select name="country" id="country">
+          <option>Spain</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>Australia</option>
+          <option>Italy</option>
+          <option>Other</option>
+        </select>
+     </td>
+    </tr>
+    <tr>
+    <td colspan="2" align="center"><input type="submit" value="Submit" id="submit"></td>
+   
+    </tr>
+  </table>
+  </form>
+</div>
+
+</body>
+</html>
