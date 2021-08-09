@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Forms</title>
+<style>
+
+body{
+	background-color:#FFC;
+}
+
+#main{
+	padding:10px 10px 10px 50px;
+	background-color:#F93;	
+	box-shadow: 10px 10px 5px 0px #999999;
+	border-radius: 10px;
+}
+
+td{
+	padding-bottom:25px;
+}
+
+h1{
+	text-align:center;
+}
+
+#card, #expiry_date, #email, #card_number, #card_date, #e_mail{
+    visibility: hidden;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+        $("#visa, #master").click(function(){
+            $("#card").css("visibility","visible");
+            $("#card_number").css("visibility","visible");
+
+            $("#expiry_date").css("visibility","visible");
+            $("#card_date").css("visibility","visible");
+
+            $("#email").css("visibility","hidden");
+            $("#e_mail").css("visibility","hidden");
+
+            $("#card").focus();
+        });
+
+        $("#paypal").click(function(){
+            $("#card").css("visibility","hidden");
+            $("#card_number").css("visibility","hidden");
+
+            $("#expiry_date").css("visibility","hidden");
+            $("#card_date").css("visibility","hidden");
+
+            $("#email").css("visibility","visible");
+            $("#e_mail").css("visibility","visible");
+
+            $("#email").focus();
+        });
+	});
+</script>
+</head>
+
+<body>
+<h1>Online shopping form</h1>
+<div id="container">
+<form id="data_form">
+  <table width="25%" border="0" align="center" id="main">
+    <tr>
+      <td>Name:</td>
+      <td><label for="name"></label>
+        <input type="text" name="name" id="name" placeholder="Name is compulsory"></td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td><input type="text" name="address" id="address"></td>
+    </tr>
+    <tr>
+      <td>City:</td>
+      <td><input type="text" name="city" id="city"></td>
+    </tr>
+    <tr>
+      <td>Postcode:</td>
+      <td><label for="postcode"></label>
+        <input type="text" name="postcode" id="postcode"></td>
+    </tr>
+    <tr>
+      <td>Payment method:</td>
+      <td><p>
+        <input type="radio" name="radio" id="paypal" value="paypal">
+        <label for="paypal">PayPal</label>
+      </p>
+        <p>
+          <input type="radio" name="radio" id="master" value="master">
+          <label for="master">MasterCard</label>          
+          </p>
+        <p>
+          <input type="radio" name="radio" id="visa" value="visa">
+          <label for="visa">Visa</label>
+          <br>
+        </p></td>
+    </tr>
+   
+    
+    <tr>
+      <td>Payment information:</td>
+      <td><table width="200">
+        <tr>
+          <td><label for="card_number" id="card_number">Card number:</label></td>
+          <td>
+            <input type="text" name="card" id="card"></td>
+        </tr>
+        <tr>
+          <td align="left"><label for="card_date" id="card_date">Expiry date:</label></td>
+          <td>
+            <input type="text" name="expiry_date" id="expiry_date"></td>
+        </tr>
+        <tr>
+        <td><label for="e_mail" id="e_mail">Email</label></td>
+        <td>
+          <input type="text" name="email" id="email"></td>
+        </tr>
+        
+      </table></td>
+    </tr>
+     <tr>
+      <td><p>Country:</p></td>
+      <td><p>
+        <label for="country"></label>
+        <select name="country" id="country">
+          <option>Spain</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>Australia</option>
+          <option>Italy</option>
+          <option>Greece</option>
+        </select>
+     </td>
+    </tr>
+    <tr>
+    <td colspan="2" align="center"><input type="submit" value="Submit" id="submit"></td>
+   
+    </tr>
+  </table>
+  </form>
+</div>
+
+</body>
+</html>
