@@ -29,11 +29,11 @@ h1{
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
-
 	$(document).ready(function() {
 		$("#data_form").submit(function(){
             if($("#name").val()=="" || $("#name").val()=="Name is compulsory"){
                 alert("Please write your name");
+                $("#name").focus();
                 return false;
             }
         });
@@ -49,7 +49,7 @@ h1{
     <tr>
       <td>Name:</td>
       <td><label for="name"></label>
-        <input type="text" name="name" id="name" value="Name is compulsory"></td>
+        <input type="text" name="name" id="name" placeholder="Name is compulsory"></td>
     </tr>
     <tr>
       <td>Surname:</td>
@@ -57,7 +57,7 @@ h1{
     </tr>
     <tr>
       <td>Age:</td>
-      <td><input type="text" name="age" id="age"></td>
+      <td><input type="number" name="age" id="age"></td>
     </tr>
     <tr>
       <td>Sex:</td>
