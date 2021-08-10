@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Forms</title>
+
+<style>
+
+html , body{
+	background-color:#036;
+}
+
+.content{
+	max-width: 760px;
+	margin: 20px 0 0 100px;
+}
+
+.main_content{
+	margin:auto;
+	width:50%;
+}
+
+.logo{
+	letter-spacing: -1px;
+	color:#FC6;
+	text-shadow: 2px 2px 1px rgba(0,0,0,.25);
+	font: normal 54px 'ColaborateThinRegular', Arial, sans-serif;
+}
+
+.main{
+	border-bottom: solid 1px rgba(255,255,255,.5);
+}
+
+.main h1 {
+	font-size: 32px;
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+	border-bottom: solid 1px rgba(255,255,255,.5);
+}
+
+p , li, legend , form{
+	font-size: 18px;
+	color: white;
+	font-family: 'ColaborateLightRegular', Arial, sans-serif;
+	line-height: 125%;
+	margin-bottom: 10px;
+}
+
+input {
+	font-size: 20px;
+}
+
+form .wide {
+	font-size: 18px;
+	width: 100%;
+}
+
+form#order div, form#signup_form div{
+	padding-bottom: 10px;	
+}
+
+form#order .label, form#signup_form .label {
+	display: block;
+	clear: left;
+	float: left;
+	width: 175px;
+	text-align: right;
+	padding: 7px 15px 0 0;
+	text-transform: uppercase;	
+	font-weight: bold;
+}
+
+form#signup_form .label {
+	width: 200px;	
+}
+
+form#order select, form#signup_form select {
+	display: inline-block;
+	margin-top: 8px;	
+}
+
+form#order input[type="radio"], form#signup_form input[type="radio"], form#signup_form input[type="checkbox"]{
+   display: inline-block;
+   margin-top: 10px;	
+}
+
+form .indent, #submit {
+	margin-left: 215px;	
+}
+
+#signup_form .indent label.error {
+  margin-left: 0;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+<script>
+$(document).ready(function() {
+    $("#signup_form").validate();
+
+}); 
+</script>
+</head>
+
+<body>
+<div class="main_content">
+	<div class="header">
+		<p class="logo">Sign up</p>
+	</div>
+	<div class="content">
+	<div class="main">
+	<h1>Fill in the form</h1>
+		<form name="signup_form" id="signup_form">
+			<div>
+				<label for="name" class="label">Name</label>
+				<input name="name" type="text" id="name" class="required" title="Please write your name">
+			</div>
+			<div>
+				<label for="email" class="label">E-mail</label>
+				<input name="e_mail" type="email" id="e_mail">
+			</div>
+			<div>
+				<label for="password" class="label">Password</label>
+				<input name="password" type="password" id="password">
+			</div>
+			<div>
+				<label for="repeat" class="label">Repeat password</label>
+				<input name="repeat" type="password" id="repeat">
+			</div>
+			<div><span class="label">Coding languages</span>
+				<input name="coding" type="checkbox" id="HTML" value="HTML" >
+				HTML
+				<input name="coding" type="checkbox" id="CSS" value="CSS">
+				<label for="CSS">CSS</label>
+				<input name="coding" type="checkbox" id="JavaScript" value="JavaScript">
+				<label for="JavaScript">JavaScript</label></div>
+			<div>
+				<label for="date" class="label">Date of birth</label>
+				<input name="date" type="date" id="date">
+			</div>
+			<div>
+				<label for="country" class="label">Country</label>
+				<select name="country" id="country">
+					<option value="">--Please select--</option>
+					<option value="spain">Spain</option>
+					<option value="uk">United Kingdom</option>
+					<option value="usa">United States</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+			<div>
+				<label for="comments" class="label">Comments</label>
+				<textarea name="comments" cols="15" rows="5" id="comments"></textarea>
+			</div>
+			<div class="labelBlock">Do you wish to receive our newsletter?</div>
+			<div class="indent">
+				<input  type="radio" name="newsletter" id="yes" value="yes" >
+				<label for="yes">Yes</label>
+				<input type="radio" name="newsletter" id="no" value="no">
+				<label for="definitely">No</label>
+				<input type="radio" name="newsletter" id="limited" value="limited">
+				<label for="limited">Only those related to my chosen coding languages</label>
+			</div>
+			<div>
+				<input type="submit" name="submit" id="submit" value="Submit">
+			</div>
+		</form>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>
