@@ -21,9 +21,11 @@ $(document).ready(function() {
 	});
 	
 	function processData(mydata){
-		$("#lastdiv").html("<p>Name: " + mydata.Name + "</p>");
-		/*$("#lastdiv").html("<p>Surname: " + mydata.Surname + "</p>");
-		$("#lastdiv").html("<p>Age: " + mydata.Age + "</p>");*/
+		var information="<p> Name: " + mydata.Name + "</p>";
+		information+="<p> Surname: " + mydata.Surname + "</p>";
+		information+="<p> Name: " + mydata.Age + "</p>";
+
+		$("#lastdiv").html(information);
 	}
 	
 				
