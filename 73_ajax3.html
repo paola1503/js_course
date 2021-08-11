@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Noticias varias</title>
+<link href="70_ajaxnewscss.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	$("#login").submit(function(){
+		
+		/*var form_data={username:$("#username").val()*/
+							 
+		var form_data=$(this).serialize();
+					 
+		$.getJSON("74_ajax3php.php", form_data, processData);
+		return false;
+	});
+	
+	function processData(mydata){
+		$("#lastdiv").html("<p>Name: " + mydata.Name + "</p>");
+		/*$("#lastdiv").html("<p>Surname: " + mydata.Surname + "</p>");
+		$("#lastdiv").html("<p>Age: " + mydata.Age + "</p>");*/
+	}
+	
+				
+}); 
+</script>
+</head>
+<body>
+
+	<div class="header">
+		<p class="logo">Retrieving information</p>
+	</div>
+	<div class="content">
+		<div class="main">
+			<form method="get" action="74_ajax3php.php" id="login">
+            <table>
+            	<tr>
+                	<td>					
+						<label for="username">Username:</label>
+                    </td>
+                    <td>
+						<input type="text" name="username" id="username">
+					</td>
+                    </tr>
+                    <tr>
+                    <td>&nbsp;</td>
+                     <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" align="center">
+						<input type="submit" name="button" id="button" value="Submit">
+					</td>
+                    </tr>
+                    </table>
+				</form>
+			<div id="lastdiv"></div>
+		</div>
+	</div>
+
+</body>
+</html>
