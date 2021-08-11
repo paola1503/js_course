@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Noticias varias</title>
+<link href="70_ajaxnewscss.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+	$("#login").submit(function(){
+		/*var form_data={username:$("#username").val(),
+						password:$("#password").val()}*/
+		
+		var form_data=$(this).serialize();
+
+		$.post("72_ajax2php.php",form_data,processData);
+		return false;
+	});
+
+	function processData(mydata){
+		if(mydata=="authorized"){
+			$("#lastdiv").html("<p> Welcome back! </p>");
+		}
+		else{
+			$("#lastdiv").html("<p> This user is not authorized </p>");	
+		}
+	}
+}); 
+</script>
+</head>
+<body>
+
+	<div class="header">
+		<p class="logo">Log-in to enter the secret vault</p>
+	</div>
+	<div class="content">
+		<div class="main">
+			<form method="get" action="72_ajax2php.php" id="login">
+            <table>
+            	<tr>
+                	<td>					
+						<label for="username">Username: </label>
+                    </td>
+                    <td>
+						<input type="text" name="username" id="username">
+					</td>
+                    </tr>
+                    <tr>
+                    <td>
+						<label for="password">Password: </label>
+                     </td>
+                     <td>
+						<input type="password" name="password" id="password">
+					</td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" align="center">
+						<input type="submit" name="button" id="button" value="Submit">
+					</td>
+                    </tr>
+                    </table>
+				</form>
+			<div id="lastdiv"> </div>
+		</div>
+	</div>
+
+</body>
+</html>
